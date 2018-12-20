@@ -1,0 +1,141 @@
+entity Permissao {
+	codigo Long
+    descricao String
+}
+
+entity Usuario {
+	codigo Long
+    descricao String
+}
+
+entity Pessoa {
+	codigo Long
+    descricao String
+}
+
+entity Aluno {
+	codigo Long
+    descricao String
+}
+
+entity Professor {
+	codigo Long
+    descricao String
+}
+
+entity Falta {
+	codigo Long
+    descricao String
+}
+
+entity Nota {
+	codigo Long
+    descricao String
+}
+
+entity Turma {
+	codigo Long
+    descricao String
+}
+
+entity Disciplina {
+	codigo Long
+    descricao String
+}
+
+entity Turma {
+	codigo Long
+    descricao String
+}
+
+entity Aula {
+	codigo Long
+    descricao String
+}
+
+entity Atividade {
+	codigo Long
+    descricao String
+}
+
+entity Entrega {
+	codigo Long
+    descricao String
+}
+
+entity PeriodoLetivo {
+	codigo Long
+    descricao String
+}
+
+relationship ManyToOne {
+	Usuario to Permissao
+}
+
+relationship OneToOne {
+	Usuario to Pessoa
+}
+
+relationship OneToOne {
+	Aluno to Pessoa
+}
+
+relationship OneToOne {
+	Professor to Pessoa
+}
+
+relationship ManyToOne {
+	Falta to Aluno
+}
+
+relationship ManyToOne {
+	Nota to Aluno
+}
+
+relationship ManyToOne {
+	Entrega to Aluno
+}
+
+relationship ManyToOne {
+	Aluno to Turma
+}
+
+relationship ManyToOne {
+	Turma to Professor
+}
+
+relationship ManyToOne {
+	Atividade to Professor
+}
+
+relationship ManyToMany {
+	Disciplina to Professor
+}
+
+relationship ManyToOne {
+	Atividade to Disciplina
+}
+
+relationship ManyToOne {
+	Atividade to Nota
+}
+
+relationship ManyToOne {
+	Aula to Turma
+}
+
+relationship ManyToOne {
+	Aula to PeriodoLetivo
+}
+
+relationship ManyToOne {
+	Falta to PeriodoLetivo
+}
+
+relationship ManyToOne {
+	Aluno to Entrega
+}
+
+relationship ManyToOne {
+	Atividade to Entrega
+}

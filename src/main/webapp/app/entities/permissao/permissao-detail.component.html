@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="permissao">
+            <h2><span jhiTranslate="blogApp.permissao.detail.title">Permissao</span> {{permissao.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="blogApp.permissao.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{permissao.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.permissao.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{permissao.descricao}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/permissao', permissao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

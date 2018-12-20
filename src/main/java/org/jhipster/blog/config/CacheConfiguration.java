@@ -38,6 +38,35 @@ public class CacheConfiguration {
             cm.createCache(org.jhipster.blog.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(org.jhipster.blog.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(org.jhipster.blog.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Permissao.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Permissao.class.getName() + ".usuarios", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Usuario.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Pessoa.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Aluno.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Aluno.class.getName() + ".faltas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Aluno.class.getName() + ".notas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Aluno.class.getName() + ".entregas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Professor.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Professor.class.getName() + ".turmas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Professor.class.getName() + ".atividades", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Professor.class.getName() + ".disciplinas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Falta.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Nota.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Nota.class.getName() + ".atividades", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Turma.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Turma.class.getName() + ".alunos", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Turma.class.getName() + ".aulas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Disciplina.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Disciplina.class.getName() + ".professors", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Disciplina.class.getName() + ".atividades", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Aula.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Atividade.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Entrega.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Entrega.class.getName() + ".alunos", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.Entrega.class.getName() + ".atividades", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.PeriodoLetivo.class.getName(), jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.PeriodoLetivo.class.getName() + ".aulas", jcacheConfiguration);
+            cm.createCache(org.jhipster.blog.domain.PeriodoLetivo.class.getName() + ".faltas", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

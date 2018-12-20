@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="usuario">
+            <h2><span jhiTranslate="blogApp.usuario.detail.title">Usuario</span> {{usuario.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="blogApp.usuario.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{usuario.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.usuario.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{usuario.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.usuario.pessoa">Pessoa</span></dt>
+                <dd>
+                    <div *ngIf="usuario.pessoa">
+                        <a [routerLink]="['/pessoa', usuario.pessoa?.id, 'view']">{{usuario.pessoa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="blogApp.usuario.permissao">Permissao</span></dt>
+                <dd>
+                    <div *ngIf="usuario.permissao">
+                        <a [routerLink]="['/permissao', usuario.permissao?.id, 'view']">{{usuario.permissao?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/usuario', usuario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

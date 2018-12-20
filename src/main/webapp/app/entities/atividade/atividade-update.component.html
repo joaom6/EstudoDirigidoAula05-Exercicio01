@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-atividade-heading" jhiTranslate="blogApp.atividade.home.createOrEditLabel">Create or edit a Atividade</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!atividade.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="atividade.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.codigo" for="field_codigo">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="atividade.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                        [(ngModel)]="atividade.descricao" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.professor" for="field_professor">Professor</label>
+                    <select class="form-control" id="field_professor" name="professor" [(ngModel)]="atividade.professor" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="professorOption.id === atividade.professor?.id ? atividade.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.disciplina" for="field_disciplina">Disciplina</label>
+                    <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="atividade.disciplina" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="disciplinaOption.id === atividade.disciplina?.id ? atividade.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.nota" for="field_nota">Nota</label>
+                    <select class="form-control" id="field_nota" name="nota" [(ngModel)]="atividade.nota" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="notaOption.id === atividade.nota?.id ? atividade.nota : notaOption" *ngFor="let notaOption of notas; trackBy: trackNotaById">{{notaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="blogApp.atividade.entrega" for="field_entrega">Entrega</label>
+                    <select class="form-control" id="field_entrega" name="entrega" [(ngModel)]="atividade.entrega" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="entregaOption.id === atividade.entrega?.id ? atividade.entrega : entregaOption" *ngFor="let entregaOption of entregas; trackBy: trackEntregaById">{{entregaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

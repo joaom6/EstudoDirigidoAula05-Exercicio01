@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="periodoLetivo">
+            <h2><span jhiTranslate="blogApp.periodoLetivo.detail.title">Periodo Letivo</span> {{periodoLetivo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="blogApp.periodoLetivo.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{periodoLetivo.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="blogApp.periodoLetivo.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{periodoLetivo.descricao}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/periodo-letivo', periodoLetivo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
